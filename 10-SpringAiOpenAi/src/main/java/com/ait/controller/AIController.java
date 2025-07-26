@@ -35,13 +35,13 @@ public class AIController {
 		this.chatClient=builder.build();
 	}
 	
-	@GetMapping(value = "/api/{prompt}")
+	@GetMapping(value = "/apis/{prompt}")
 	public String generateResult(@PathVariable("prompt") String prompt) {
 		String response = chatClient.prompt(prompt).call().content();
 		return response;
 	}
 	
-	@GetMapping(value = "/api2/{prompt}")
+	@GetMapping(value = "/api2s/{prompt}")
 	public String generateAdavanceResult(@PathVariable("prompt") String prompt) {
 		ChatResponse chatResponse = chatClient.prompt(prompt).call().
 				chatResponse();
